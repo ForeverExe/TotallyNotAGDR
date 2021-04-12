@@ -7,6 +7,14 @@ Struttura personaggio e funzioni di modifica interna ad essa, come l'inserimento
 #include "Items.c"
 #include "misc.c"
 
+typedef struct inventario{
+    Arma arma;
+    Armor armor;
+    Item item1;
+    Item item2;
+    Spell incantesimo;
+}Inventario;
+
 typedef struct giocatore{
     char nome[40];
     int mana;
@@ -15,14 +23,6 @@ typedef struct giocatore{
     Inventario inventory;
 
 }Giocatore;
-
-typedef struct inventario{
-    Arma arma;
-    Armor armor;
-    Item item1;
-    Item item2;
-    Spell incantesimo;
-}Inventario;
 
 Giocatore inizializzaPg(Giocatore player);
 
