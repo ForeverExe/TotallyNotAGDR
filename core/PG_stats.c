@@ -24,14 +24,14 @@ typedef struct giocatore{
 
 }Giocatore;
 
-Giocatore inizializzaPg(Giocatore player);
+Giocatore* inizializzaPg(Giocatore* player);
 
 //fase di creazione del personaggio
-Giocatore inizializzaPg(Giocatore player){
+Giocatore* inizializzaPg(Giocatore* player){
     int opz;
 
     printf("Inserisci il nome del personaggio: ");
-    gets(player.nome);
+    gets(player->nome);
     fflush(stdin);
     TESTOINGAME("Sei un classico avventuriero, con il desiderio di esplorare il mondo e guadagnare ricchezze.\nMa come puoi definirti tale se non hai nemmeno un\' equipaggiamento?\n")
     TESTOINGAME("Mercante: Oh salve! Lei deve essere nuovo da queste parti. Come? Non ha nulla per difendersi? Non si preoccupi, qua può trovare quello che le serve!\n\n")
@@ -43,17 +43,17 @@ Giocatore inizializzaPg(Giocatore player){
         switch(opz){
             case 1:{
                 printf("La Spada a una mano e\' un classico: leggera, versatile, e sicuramente non la usi per tagliare il salame.");
-                player.inventory.arma = setWeapon(player.inventory.arma, "Spada a una mano", "E\' un classico: leggera, versatile, e sicuramente non la usi per tagliare il salame.", 10, 5);
+                player->inventory.arma = setWeapon(player->inventory.arma, "Spada a una mano", "E\' un classico: leggera, versatile, e sicuramente non la usi per tagliare il salame.", 10, 5);
                 break;
             }
             case 2:{
                 printf("L\'arco, arma di cacciatori (che siano di animali o di teste). Utile per gli attacchi a distanza.");
-                player.inventory.arma = setWeapon(player.inventory.arma, "Arco e frecce", "L\' arco, arma di cacciatori (che siano di animali o di teste). Utile per gli attacchi a distanza.", 5, 20);
+                player->inventory.arma = setWeapon(player->inventory.arma, "Arco e frecce", "L\' arco, arma di cacciatori (che siano di animali o di teste). Utile per gli attacchi a distanza.", 5, 20);
                 break;
             }
             case 3:{
                 printf("L\'ascia, un\'arma grezza ma dall'alto valore d'attacco malgrado lo scarso raggio.");
-                player.inventory.arma = setWeapon(player.inventory.arma, "Ascia", "L\'ascia, un\'arma grezza ma dall'alto valore d'attacco malgrado lo scarso raggio.", 20, 3);
+                player->inventory.arma = setWeapon(player->inventory.arma, "Ascia", "L\'ascia, un\'arma grezza ma dall'alto valore d'attacco malgrado lo scarso raggio.", 20, 3);
                 break;
             }
             default:{
