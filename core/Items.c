@@ -6,9 +6,6 @@
 #include <string.h>
 #include "misc.c"
 
-Arma setWeapon(Arma arma, char* nome, char* descrizione, int danno, int distanza);
-Armor setArmor(Armor armor, char* nome, char* descrizione, int armatura);
-Item setItem(Item oggetto, char* nome, char* descrizione,char* tag, int value);
 
 typedef struct arma{
     int danno;                  //danno dell' arma
@@ -37,6 +34,10 @@ typedef struct item{
     char nome[50];
     char descrizione[100];
 }Item;
+
+Arma setWeapon(Arma arma, char* nome, char* descrizione, int danno, int distanza);
+Armor setArmor(Armor armor, char* nome, char* descrizione, int armatura);
+Item setItem(Item oggetto, char* nome, char* descrizione,char* tag, int value);
 
 /**
  * @brief Imposta/aggiorna l'arma
