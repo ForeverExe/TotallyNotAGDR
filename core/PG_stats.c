@@ -43,19 +43,19 @@ Giocatore* inizializzaPg(Giocatore* player){
         switch(opz){
             case 1:{
                 printf("%s", SPADA);
-                player->inventory.arma = setWeapon(player->inventory.arma, "Spada a una mano", SPADA, 10, 5);
+                player->inventory.arma = setWeapon(player->inventory.arma, "Spada a una mano", 10, 5);
                 preso = 1;
                 break;
             }
             case 2:{
                 printf("%s", ARCO);
-                player->inventory.arma = setWeapon(player->inventory.arma, "Arco e frecce", ARCO, 5, 20);
+                player->inventory.arma = setWeapon(player->inventory.arma, "Arco e frecce", 5, 20);
                 preso = 1;
                 break;
             }
             case 3:{
                 printf("%s", ASCIA);
-                player->inventory.arma = setWeapon(player->inventory.arma, "Ascia", ASCIA, 20, 3);
+                player->inventory.arma = setWeapon(player->inventory.arma, "Ascia", 20, 3);
                 preso = 1;
                 break;
             }
@@ -76,19 +76,19 @@ Giocatore* inizializzaPg(Giocatore* player){
         switch(opz){
             case 1:{
                 printf("%s", ARMORCOMPLETA);
-                player->inventory.armor = setArmor(player->inventory.armor, "Armatura Pesante", ARMORCOMPLETA, 40);
+                player->inventory.armor = setArmor(player->inventory.armor, "Armatura Pesante", 40);
                 preso = 1;
                 break;
             }
             case 2:{
                 printf("%s", ARMORPLACCHE);
-                player->inventory.armor = setArmor(player->inventory.armor, "Armatura a placche", ARMORPLACCHE, 20);
+                player->inventory.armor = setArmor(player->inventory.armor, "Armatura a placche", 20);
                 preso = 1;
                 break;
             }
             case 3:{
                 printf("%s", ARMORLEGGERA);
-                player->inventory.armor = setArmor(player->inventory.armor, "Armatura Leggera", ARMORLEGGERA, 25);
+                player->inventory.armor = setArmor(player->inventory.armor, "Armatura Leggera", 25);
                 preso = 1;
                 break;
             }
@@ -101,27 +101,27 @@ Giocatore* inizializzaPg(Giocatore* player){
 
     preso=0;
     printf("%s", MERCANTESPELL);
-    printf("Scegli un incantesimo (puramente estetico, sebbene non ci sia un interfaccia grafica *occhiolino*):\n");
-    printf("1. Palla di Fuoco\n2. Pistol\'Acqua(?)\n2. Freccia di luce");
+    printf("Scegli un incantesimo (puramente estetico, forse, sebbene non ci sia un interfaccia grafica *occhiolino*):\n");
+    printf("1. Palla di Fuoco\n2. Pistolacqua(?)\n2. Freccia di luce");
     do{
         scanf("%d", &opz);
         fflush(stdin);
         switch(opz){
             case 1:{
-                printf("%s", ARMORCOMPLETA);
-                player->inventory.armor = setArmor(player->inventory.armor, "Armatura Pesante", ARMORCOMPLETA, 40);
+                printf("%s", PALLAFUOCO);
+                player->inventory.incantesimo = setSpell(player->inventory.incantesimo, "Palla di Fuoco", 10, 10);
                 preso = 1;
                 break;
             }
             case 2:{
-                printf("%s", ARMORPLACCHE);
-                player->inventory.armor = setArmor(player->inventory.armor, "Armatura a placche", ARMORPLACCHE, 20);
+                printf("%s", PISTOLACQUA);
+                player->inventory.incantesimo = setSpell(player->inventory.incantesimo, "Pistolaqua", 10, 10);
                 preso = 1;
                 break;
             }
             case 3:{
-                printf("%s", ARMORLEGGERA);
-                player->inventory.armor = setArmor(player->inventory.armor, "Armatura Leggera", ARMORLEGGERA, 25);
+                printf("%s", FRECCIALUCE);
+                player->inventory.incantesimo = setSpell(player->inventory.incantesimo, "Freccia di Luce", 10, 10);
                 preso = 1;
                 break;
             }

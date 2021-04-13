@@ -11,20 +11,17 @@ typedef struct arma{
     int danno;                  //danno dell' arma
     int distanza;               //raggio dell' attacco
     char nome[50];              //nome dell' item
-    char descrizione[200];      //descrizione dell' item
 }Arma;
 
 typedef struct armor{
     int armor;                  //resistenza armatura
     char nome[50];              //nome dell' item
-    char descrizione[200];      //descrizione dell' item
 }Armor;
 
 typedef struct spell{
     int danno;
     int mana_richiesto;
     char nome[50];              //nome dell' item
-    char descrizione[200];      //descrizione dell' item
 }Spell;
 
 typedef struct item{    
@@ -32,12 +29,12 @@ typedef struct item{
     int utilizzi;
     char tag[5];
     char nome[50];
-    char descrizione[200];
 }Item;
 
-Arma setWeapon(Arma arma, char* nome, char* descrizione, int danno, int distanza);
-Armor setArmor(Armor armor, char* nome, char* descrizione, int armatura);
-Item setItem(Item oggetto, char* nome, char* descrizione,char* tag, int value);
+Arma setWeapon(Arma arma, char* nome, int danno, int distanza);
+Armor setArmor(Armor armor, char* nome, int armatura);
+Spell setSpell(Spell incantesimo, char* nome, int danno, int mana);
+Item setItem(Item oggetto, char* nome,char* tag, int value);
 
 /**
  * @brief Imposta/aggiorna l'arma
@@ -49,9 +46,8 @@ Item setItem(Item oggetto, char* nome, char* descrizione,char* tag, int value);
  * @param distanza raggio d'azione dell'arma
  * @return Arma 
  */
-Arma setWeapon(Arma arma, char* nome, char* descrizione, int danno, int distanza){
+Arma setWeapon(Arma arma, char* nome, int danno, int distanza){
     strcpy(arma.nome, nome);
-    strcpy(arma.descrizione, descrizione);
     arma.danno = danno;
     arma.distanza = distanza;
     return arma;
@@ -62,15 +58,28 @@ Arma setWeapon(Arma arma, char* nome, char* descrizione, int danno, int distanza
  * 
  * @param Armor armor 
  * @param char nome 
- * @param char descrizione 
  * @param int armatura 
  * @return Armor 
  */
-Armor setArmor(Armor armor, char* nome, char* descrizione, int armatura){
+Armor setArmor(Armor armor, char* nome, int armatura){
     strcpy(armor.nome, nome);
-    strcpy(armor.descrizione, descrizione);
     armor.armor = armatura;
     return armor;
+}
+
+/**
+ * @brief Imposta incantesimo
+ * 
+ * @param Spell struttura incantesimo 
+ * @param char* nome dell' incantesimo 
+ * @param int danno dell' incantesimo 
+ * @param int mana richiesto 
+ * @return Spell 
+ */
+Spell setSpell(Spell incantesimo, char* nome, int danno, int mana){
+    strcpy(incantesimo.nome, nome);
+    incantesimo.danno = danno;
+    incantesimo.mana_richiesto = mana;
 }
 
 /**
@@ -78,13 +87,11 @@ Armor setArmor(Armor armor, char* nome, char* descrizione, int armatura){
  * 
  * @param Item oggetto 
  * @param char nome 
- * @param char descrizione 
  * @param int value 
  * @return Item 
  */
-Item setItem(Item oggetto, char* nome, char* descrizione,char* tag, int value){
+Item setItem(Item oggetto, char* nome,char* tag, int value){
     strcpy(oggetto.nome, nome);
-    strcpy(oggetto.descrizione, descrizione);
     strcpy(oggetto.tag, tag);
     oggetto.value = value;
     return oggetto;
