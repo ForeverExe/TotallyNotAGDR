@@ -7,7 +7,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "core/Items.c"
 #include "core/misc.c"
 #include "core/PG_stats.c"
 

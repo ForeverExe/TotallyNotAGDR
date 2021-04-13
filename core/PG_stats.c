@@ -30,8 +30,8 @@ Giocatore* inizializzaPg(Giocatore* player);
 Giocatore* inizializzaPg(Giocatore* player){
     int opz;
 
-    printf("Inserisci il nome del personaggio: ");
-    gets(player->nome);
+    printf("\nInserisci il nome del personaggio: ");
+    scanf("%s", player->nome);
     fflush(stdin);
     TESTOINGAME("Sei un classico avventuriero, con il desiderio di esplorare il mondo e guadagnare ricchezze.\nMa come puoi definirti tale se non hai nemmeno un\' equipaggiamento?\n")
     TESTOINGAME("Mercante: Oh salve! Lei deve essere nuovo da queste parti. Come? Non ha nulla per difendersi? Non si preoccupi, qua può trovare quello che le serve!\n\n")
