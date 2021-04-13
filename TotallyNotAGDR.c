@@ -15,7 +15,7 @@
 
 int main(){
     Giocatore* player;
-    printf("Benvenuto in Totally Not A GDR! Si, il titolo e\' abbastanza autoesplicativo.\nIniziamo con la creazione del personaggio!");
+    printf("%s", WELCOME);
     player = inizializzaPg(player);
     return 0;
 }

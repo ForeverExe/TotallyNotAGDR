@@ -33,8 +33,8 @@ Giocatore* inizializzaPg(Giocatore* player){
     printf("\nInserisci il nome del personaggio: ");
     scanf("%s", player->nome);
     fflush(stdin);
-    printf("Sei un classico avventuriero, con il desiderio di esplorare il mondo e guadagnare ricchezze.\nMa come puoi definirti tale se non hai nemmeno un\' equipaggiamento?\n");
-    printf("Mercante: Oh salve! Lei deve essere nuovo da queste parti. Come? Non ha nulla per difendersi? Non si preoccupi, qua può trovare quello che le serve!\n\n");
+    printf("%s", INTRO1);
+    printf("%s", MERCANTEARMI);
     printf("Scegli un\'arma:\n ");
     printf("1. Spada a una mano [10 Attacco, 5 Distanza]\n2. Arco (con ovviamente delle frecce)[5 attacco, 20 distanza]\n3. Ascia da guerra (almeno secondo il mercante)[20 attacco, 3 distanza]\nMercante: Quindi? Cosa scegli? ");
     do{
@@ -42,22 +42,22 @@ Giocatore* inizializzaPg(Giocatore* player){
         fflush(stdin);
         switch(opz){
             case 1:{
-                printf("La Spada a una mano e\' un classico: leggera, versatile, e sicuramente non la usi per tagliare il salame.");
-                player->inventory.arma = setWeapon(player->inventory.arma, "Spada a una mano", "E\' un classico: leggera, versatile, e sicuramente non la usi per tagliare il salame.", 10, 5);
+                printf("%s", SPADA);
+                player->inventory.arma = setWeapon(player->inventory.arma, "Spada a una mano", SPADA, 10, 5);
                 break;
             }
             case 2:{
-                printf("L\'arco, arma di cacciatori (che siano di animali o di teste). Utile per gli attacchi a distanza.");
-                player->inventory.arma = setWeapon(player->inventory.arma, "Arco e frecce", "L\' arco, arma di cacciatori (che siano di animali o di teste). Utile per gli attacchi a distanza.", 5, 20);
+                printf("%s", ARCO);
+                player->inventory.arma = setWeapon(player->inventory.arma, "Arco e frecce", ARCO, 5, 20);
                 break;
             }
             case 3:{
-                printf("L\'ascia, un\'arma grezza ma dall'alto valore d'attacco malgrado lo scarso raggio.");
-                player->inventory.arma = setWeapon(player->inventory.arma, "Ascia", "L\'ascia, un\'arma grezza ma dall'alto valore d'attacco malgrado lo scarso raggio.", 20, 3);
+                printf("%s", ASCIA);
+                player->inventory.arma = setWeapon(player->inventory.arma, "Ascia", ASCIA, 20, 3);
                 break;
             }
             default:{
-                printf("Mercante: Non credo di aver capito bene...\nQuindi, cosa scegli? ");
+                printf("%s", ERROREMERCANTE);
             }
         }
     }while(opz != 1 || opz != 2 || opz != 3);
