@@ -5,4 +5,7 @@ File di funzioni e define miscellanee
 #include <stdlib.h>
 #include <string.h>
 
-#define TESTOINGAME(x) printf("%s", x);
+//-----TESTI PREDEFINITI----
+#define WELCOME "Benvenuto in Totally Not A GDR! Si, il titolo e\' abbastanza autoesplicativo.\nIniziamo con la creazione del personaggio!"
+#define PLAYERDEFEAT "Sei stato sconfitto."
+#define ENEMYDEFEAT "Hai sconfitto il nemico!"

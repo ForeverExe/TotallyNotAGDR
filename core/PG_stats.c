@@ -33,8 +33,8 @@ Giocatore* inizializzaPg(Giocatore* player){
     printf("\nInserisci il nome del personaggio: ");
     scanf("%s", player->nome);
     fflush(stdin);
-    TESTOINGAME("Sei un classico avventuriero, con il desiderio di esplorare il mondo e guadagnare ricchezze.\nMa come puoi definirti tale se non hai nemmeno un\' equipaggiamento?\n")
-    TESTOINGAME("Mercante: Oh salve! Lei deve essere nuovo da queste parti. Come? Non ha nulla per difendersi? Non si preoccupi, qua può trovare quello che le serve!\n\n")
+    printf("Sei un classico avventuriero, con il desiderio di esplorare il mondo e guadagnare ricchezze.\nMa come puoi definirti tale se non hai nemmeno un\' equipaggiamento?\n");
+    printf("Mercante: Oh salve! Lei deve essere nuovo da queste parti. Come? Non ha nulla per difendersi? Non si preoccupi, qua può trovare quello che le serve!\n\n");
     printf("Scegli un\'arma:\n ");
     printf("1. Spada a una mano [10 Attacco, 5 Distanza]\n2. Arco (con ovviamente delle frecce)[5 attacco, 20 distanza]\n3. Ascia da guerra (almeno secondo il mercante)[20 attacco, 3 distanza]\nMercante: Quindi? Cosa scegli? ");
     do{
@@ -57,7 +57,7 @@ Giocatore* inizializzaPg(Giocatore* player){
                 break;
             }
             default:{
-                TESTOINGAME("Mercante: Non credo di aver capito bene...\nQuindi, cosa scegli? ")
+                printf("Mercante: Non credo di aver capito bene...\nQuindi, cosa scegli? ");
             }
         }
     }while(opz != 1 || opz != 2 || opz != 3);
