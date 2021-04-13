@@ -11,7 +11,7 @@ File di funzioni e define miscellanee
 #define MERCANTEARMI "Mercante: Oh salve! Lei deve essere nuovo da queste parti. Come? Non ha nulla per difendersi? Non si preoccupi, qua può trovare quello che le serve!\n\n"
 #define MERCANTEARMOR "Mercante: Bene, adesso è meglio se ti scegli un' armatura per difenderti."
 #define MERCANTESPELL "Mercante: Per ottimizzare i danni, è meglio se ti scegli un incantesimo da cambiare con l'arma quando il nemico è distante. Usa questo grimorio."
-#define ERROREMERCANTE "Mercante: Non credo di aver capito bene...\nQuindi, cosa scegli?"
+#define ERROREMERCANTE "Mercante: Non credo di aver capito bene... Quindi, cosa scegli? "
 
 //----Sconfitta/Vittoria----
 #define PLAYERDEFEAT "Sei stato sconfitto."
