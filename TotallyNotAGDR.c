@@ -14,7 +14,7 @@
 
 
 int main(){
-    Giocatore* player;
+    Giocatore* player = (Giocatore*)malloc(sizeof(Giocatore));
     printf("%s", WELCOME);
     player = inizializzaPg(player);
     return 0;

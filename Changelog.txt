@@ -1,3 +1,4 @@
 13/03/2021
 - Fixato il problema del "redefinition error"
 - Sostituito TESTOINGAME con dialoghi predefiniti
+- Sistemato il ciclo a riga 65, andava in palla usando 3 OR nella condizione

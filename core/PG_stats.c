@@ -29,11 +29,11 @@ Giocatore* inizializzaPg(Giocatore* player);
 //fase di creazione del personaggio
 Giocatore* inizializzaPg(Giocatore* player){
     int opz;
-
+    int preso=0;
     printf("\nInserisci il nome del personaggio: ");
     scanf("%s", player->nome);
     fflush(stdin);
-    printf("%s", INTRO1);
+    printf("\n%s", INTRO1);
     printf("%s", MERCANTEARMI);
     printf("Scegli un\'arma:\n ");
     printf("1. Spada a una mano [10 Attacco, 5 Distanza]\n2. Arco (con ovviamente delle frecce)[5 attacco, 20 distanza]\n3. Ascia da guerra (almeno secondo il mercante)[20 attacco, 3 distanza]\nMercante: Quindi? Cosa scegli? ");
@@ -44,23 +44,28 @@ Giocatore* inizializzaPg(Giocatore* player){
             case 1:{
                 printf("%s", SPADA);
                 player->inventory.arma = setWeapon(player->inventory.arma, "Spada a una mano", SPADA, 10, 5);
+                preso = 1;
                 break;
             }
             case 2:{
                 printf("%s", ARCO);
                 player->inventory.arma = setWeapon(player->inventory.arma, "Arco e frecce", ARCO, 5, 20);
+                preso = 1;
                 break;
             }
             case 3:{
                 printf("%s", ASCIA);
                 player->inventory.arma = setWeapon(player->inventory.arma, "Ascia", ASCIA, 20, 3);
+                preso = 1;
                 break;
             }
             default:{
                 printf("%s", ERROREMERCANTE);
+                break;
             }
         }
-    }while(opz != 1 || opz != 2 || opz != 3);
+        //controllare il perchè va in loop infinito
+    }while(preso != 0 );
 
     // TESTOINGAME("Mercante: Bene, adesso è meglio se ti scegli un' armatura per difenderti.")
     // printf("Scegli un' armatura:\n");
