@@ -11,20 +11,20 @@ typedef struct arma{
     int danno;                  //danno dell' arma
     int distanza;               //raggio dell' attacco
     char nome[50];              //nome dell' item
-    char descrizione[100];      //descrizione dell' item
+    char descrizione[200];      //descrizione dell' item
 }Arma;
 
 typedef struct armor{
     int armor;                  //resistenza armatura
     char nome[50];              //nome dell' item
-    char descrizione[100];      //descrizione dell' item
+    char descrizione[200];      //descrizione dell' item
 }Armor;
 
 typedef struct spell{
     int danno;
     int mana_richiesto;
     char nome[50];              //nome dell' item
-    char descrizione[100];      //descrizione dell' item
+    char descrizione[200];      //descrizione dell' item
 }Spell;
 
 typedef struct item{    
@@ -32,7 +32,7 @@ typedef struct item{
     int utilizzi;
     char tag[5];
     char nome[50];
-    char descrizione[100];
+    char descrizione[200];
 }Item;
 
 Arma setWeapon(Arma arma, char* nome, char* descrizione, int danno, int distanza);

@@ -64,15 +64,73 @@ Giocatore* inizializzaPg(Giocatore* player){
                 break;
             }
         }
-        //controllare il perchè va in loop infinito
-    }while(preso != 0 );
+    }while(preso == 0 );
 
-    // TESTOINGAME("Mercante: Bene, adesso è meglio se ti scegli un' armatura per difenderti.")
-    // printf("Scegli un' armatura:\n");
-    // printf("1. Armatura completa [40 armatura]\n2. Armatura a placche [20 armatura]\n3. Armatura leggera [25 armatura]");
-    // scanf("%d", opz);
-    // fflush(stdin);
+    preso = 0;
+    printf("%s", MERCANTEARMOR);
+    printf("Scegli un' armatura:\n");
+    printf("1. Armatura completa [40 armatura]\n2. Armatura a placche [20 armatura]\n3. Armatura leggera [25 armatura]");
+    do{
+        scanf("%d", &opz);
+        fflush(stdin);
+        switch(opz){
+            case 1:{
+                printf("%s", ARMORCOMPLETA);
+                player->inventory.armor = setArmor(player->inventory.armor, "Armatura Pesante", ARMORCOMPLETA, 40);
+                preso = 1;
+                break;
+            }
+            case 2:{
+                printf("%s", ARMORPLACCHE);
+                player->inventory.armor = setArmor(player->inventory.armor, "Armatura a placche", ARMORPLACCHE, 20);
+                preso = 1;
+                break;
+            }
+            case 3:{
+                printf("%s", ARMORLEGGERA);
+                player->inventory.armor = setArmor(player->inventory.armor, "Armatura Leggera", ARMORLEGGERA, 25);
+                preso = 1;
+                break;
+            }
+            default:{
+                printf("%s", ERROREMERCANTE);
+                break;
+            }
+        }
+    }while(preso == 0 );
 
+    preso=0;
+    printf("%s", MERCANTESPELL);
+    printf("Scegli un incantesimo (puramente estetico, sebbene non ci sia un interfaccia grafica *occhiolino*):\n");
+    printf("1. Palla di Fuoco\n2. Pistol\'Acqua(?)\n2. Freccia di luce");
+    do{
+        scanf("%d", &opz);
+        fflush(stdin);
+        switch(opz){
+            case 1:{
+                printf("%s", ARMORCOMPLETA);
+                player->inventory.armor = setArmor(player->inventory.armor, "Armatura Pesante", ARMORCOMPLETA, 40);
+                preso = 1;
+                break;
+            }
+            case 2:{
+                printf("%s", ARMORPLACCHE);
+                player->inventory.armor = setArmor(player->inventory.armor, "Armatura a placche", ARMORPLACCHE, 20);
+                preso = 1;
+                break;
+            }
+            case 3:{
+                printf("%s", ARMORLEGGERA);
+                player->inventory.armor = setArmor(player->inventory.armor, "Armatura Leggera", ARMORLEGGERA, 25);
+                preso = 1;
+                break;
+            }
+            default:{
+                printf("%s", ERROREMERCANTE);
+                break;
+            }
+        }
+    }while(preso == 0 );
 
 
 
