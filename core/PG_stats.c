@@ -132,8 +132,10 @@ Giocatore* inizializzaPg(Giocatore* player){
         }
     }while(preso == 0 );
 
-
-
+    printf("%s\nHai ottenuto:\n- 1x Pozione (HP, 5 usi)\n- 1x Acqua distillata (Mana, 5 usi)", MERCANTEITEMS);
+    
+    player->inventory.item1 = setItem(player->inventory.item1, "Pozione", "HP", 20, 5);
+    player->inventory.item2 = setItem(player->inventory.item2, "Acqua Distillata", "MANA", 20, 5);
 
     return player;
 }

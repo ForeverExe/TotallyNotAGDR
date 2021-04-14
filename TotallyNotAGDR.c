@@ -14,8 +14,39 @@
 
 
 int main(){
+    int opz;
+    int scelto=0;
     Giocatore* player = (Giocatore*)malloc(sizeof(Giocatore));
     printf("%s", WELCOME);
     player = inizializzaPg(player);
+
+    printf("Completato il tuo equipaggiamento, inizia la tua avventura!");
+    printf("Durante il viaggio hai visitato molti posti, come villaggi di montagna, foreste, rovine e chi piu\' ne ha e piu\' ne metta! Finche\'...\n");
+    printf("E\' comparso un lupo! Probabilmente ti vede come la sua cena. E\' il momento di agire!\n");    
+    do{
+    printf("Che vuoi fare?\n 1 - Affrontarlo\n 2 - Dargli qualcosa da mangiare\n 3 - Scappare\n\nScegli un opzione: ");
+    scanf("%d", &opz);
+    fflush(stdin);
+
+    switch(opz){
+        case 1:{
+            
+            scelto = 1;
+            break;
+        }
+        case 2:{
+            printf("Per fortuna avevi della carne da parte, e chissa\' perche\' del sonnifero. Comunque, gliele dai insieme ed il lupo si addormenta, permettendoti di fuggire!");
+            scelto = 1;
+            break;
+        }
+        case 3:{
+            printf("Hai provato a scappare, ma il lupo era piu\' veloce di te e ti ha preso. Su col morale, almeno avevi un buon sapore.\n\n%s", PLAYERDEFEAT);
+            return 0;
+        }
+        default:{
+            printf("Fai il serio, scegli una delle tre opzioni!\n");
+        }
+    }
+    }while(scelto == 0);
     return 0;
 }
