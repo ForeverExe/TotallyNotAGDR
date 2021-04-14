@@ -174,12 +174,11 @@ void combat(Giocatore* player, char* enemyName, int enemyDmg, int enemyHp, int e
 
     do{
         if(turno){  //TURNO PG
-            do{
-                printf("\nHP: %d | Mana: %d\n", player->hp, player->mana);
-                printf("1. %s\n2. %s\n3. %s\n4. %s\nCosa scegli? ", player->inventory.arma.nome, player->inventory.incantesimo.nome, player->inventory.item1.nome, player->inventory.item2.nome);
+                printf("\nE\' il tuo turno!\n\nHP: %d | Mana: %d\n", player->hp, player->mana);
+                printf("1. %s\n2. %s\n3. %s\n4. %s\n5. Aspetta (inserisci qualsiasi altro valore)\nCosa scegli? ", player->inventory.arma.nome, player->inventory.incantesimo.nome, player->inventory.item1.nome, player->inventory.item2.nome);
                 scanf("%d", &scelta);
                 fflush(stdin);
-            }while(scelta);
+
             switch(scelta){
                 case 1:{ //ATT CORPO A CORPO
 
@@ -232,11 +231,13 @@ void combat(Giocatore* player, char* enemyName, int enemyDmg, int enemyHp, int e
                     }
                     break;
                 }
+                default:{
+                    printf("Decidi di aspettare...\n");
+                }
             }
-
-            
             turno = false;
         }else{ //TURNO NEMICO
+            printf("\nE\' il turno del nemico!\n\n");
             if(player->inventory.armor.armor > enemy.danno){ //se l'armatura è superiore al danno, il PG non subisce danno
                 printf("Il nemico attacca, ma non subisci alcun danno grazie alla tua armatura!");
             }else if(player->inventory.armor.armor == enemy.danno){ //se il danno è uguale al livello armatura, il player subisce 1 danno
@@ -247,6 +248,7 @@ void combat(Giocatore* player, char* enemyName, int enemyDmg, int enemyHp, int e
                 printf("Il nemico ti attacca, perdi %d hp!", diff);
                 player->hp = player->hp - diff;
             }
+
             turno = true;
         }
     }while(player->hp <= 0 || enemy.hp <= 0);

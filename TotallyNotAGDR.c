@@ -18,7 +18,10 @@ int main(){
     int opz;
     int scelto=0;
     Giocatore* player = (Giocatore*)malloc(sizeof(Giocatore));
+    SPAZIO
     printf("%s", WELCOME);
+    SPAZIO
+    printf("Iniziamo con la creazione del personaggio!");
     player = inizializzaPg(player);
 
     printf("\nCompletato il tuo equipaggiamento, inizi la tua avventura!\n");
