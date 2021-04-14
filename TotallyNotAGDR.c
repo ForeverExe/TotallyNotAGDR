@@ -21,9 +21,9 @@ int main(){
     printf("%s", WELCOME);
     player = inizializzaPg(player);
 
-    printf("Completato il tuo equipaggiamento, inizi la tua avventura!");
+    printf("Completato il tuo equipaggiamento, inizi la tua avventura!\n");
     printf("Durante il viaggio hai visitato molti posti, come villaggi di montagna, foreste, rovine e chi piu\' ne ha e piu\' ne metta! Finche\'...\n");
-    printf("E\' comparso un lupo! Probabilmente ti vede come la sua cena. E\' il momento di agire!\n");    
+    printf("E\' comparso un lupo! Probabilmente ti vede come la sua cena. E\' il momento di agire!\n\n");    
     do{
     printf("Che vuoi fare?\n 1 - Affrontalo\n 2 - Dagli qualcosa da mangiare\n 3 - Scappa\n\nScegli un opzione: ");
     scanf("%d", &opz);

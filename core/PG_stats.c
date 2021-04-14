@@ -79,8 +79,8 @@ Giocatore* inizializzaPg(Giocatore* player){
 
     preso = 0;
     printf("%s", MERCANTEARMOR);
-    printf("Scegli un' armatura:\n");
-    printf("1. Armatura completa [40 armatura]\n2. Armatura a placche [20 armatura]\n3. Armatura leggera [25 armatura]");
+    printf("\nScegli un' armatura:\n");
+    printf("1. Armatura completa [40 armatura]\n2. Armatura a placche [20 armatura]\n3. Armatura leggera [25 armatura]\nMercante: Quindi? Cosa scegli? ");
     do{
         scanf("%d", &opz);
         fflush(stdin);
@@ -113,7 +113,7 @@ Giocatore* inizializzaPg(Giocatore* player){
     preso=0;
     printf("%s", MERCANTESPELL);
     printf("Scegli un incantesimo (puramente estetico, forse, sebbene non ci sia un interfaccia grafica *occhiolino*):\n");
-    printf("1. Palla di Fuoco [10 mana | 10 danno]\n2. Pistolacqua(?) [10 mana | 10 danno]\n2. Freccia di luce [10 mana | 10 danno]");
+    printf("1. Palla di Fuoco [10 mana | 10 danno]\n2. Pistolacqua(?) [10 mana | 10 danno]\n2. Freccia di luce [10 mana | 10 danno]\nMercante: Quindi? Cosa scegli? ");
     do{
         scanf("%d", &opz);
         fflush(stdin);
@@ -143,7 +143,7 @@ Giocatore* inizializzaPg(Giocatore* player){
         }
     }while(preso == 0 );
 
-    printf("%s\nHai ottenuto:\n- 1x Pozione (HP, 5 usi)\n- 1x Acqua distillata (Mana, 5 usi)", MERCANTEITEMS);
+    printf("%s\nHai ottenuto:\n- 1x Pozione (HP, 5 usi)\n- 1x Acqua distillata (Mana, 5 usi)\n", MERCANTEITEMS);
     
     player->inventory.item1 = setItem(player->inventory.item1, "Pozione", "HP", 20, 5);
     player->inventory.item2 = setItem(player->inventory.item2, "Acqua Distillata", "MANA", 20, 5);
