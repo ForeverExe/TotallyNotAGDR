@@ -23,8 +23,7 @@ int main(){
     SPAZIO
     printf("Iniziamo con la creazione del personaggio!");
     player = inizializzaPg(player);
-
-    printf("\nCompletato il tuo equipaggiamento, inizi la tua avventura!\n");
+    printf("\nCompletato il tuo equipaggiamento, inizi la tua avventura!\n\n");
     printf("Durante il viaggio hai visitato molti posti, come villaggi di montagna, foreste, rovine e chi piu\' ne ha e piu\' ne metta! Finche\'...\n");
     printf("E\' comparso un lupo! Probabilmente ti vede come la sua cena. E\' il momento di agire!\n\n");    
     do{
@@ -35,12 +34,14 @@ int main(){
     switch(opz){
         case 1:{ //combattimento
             scelto = 1;
-            combat(player, "Lupo", 20, 50, 5);
+            combat(player, "Lupo", 20, 50, 10);
             if(player->hp <= 0){
                 printf("%s", PLAYERDEFEAT);
+                getchar();
                 return 0;
             }else{
                 printf("%s", ENEMYDEFEAT);
+                getchar();
             }
             break;
         }

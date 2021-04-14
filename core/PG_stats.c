@@ -46,7 +46,7 @@ Giocatore* inizializzaPg(Giocatore* player){
     printf("\nInserisci il nome del personaggio: ");
     scanf("%s", player->nome);
     fflush(stdin);
-    printf("\n%s", INTRO1);
+    printf("\n%s", INTRO);
     printf("%s", MERCANTEARMI);
     printf("Scegli un\'arma:\n");
     printf("1. Spada a una mano [10 Attacco, 10 Distanza]\n2. Arco (con ovviamente delle frecce)[5 attacco, 20 distanza]\n3. Ascia da guerra (almeno secondo il mercante)[20 attacco, 5 distanza]\nMercante: Quindi? Cosa scegli? ");
@@ -56,7 +56,7 @@ Giocatore* inizializzaPg(Giocatore* player){
         switch(opz){
             case 1:{
                 printf("%s", SPADA);
-                player->inventory.arma = setWeapon(player->inventory.arma, "Spada a una mano", 10, 5);
+                player->inventory.arma = setWeapon(player->inventory.arma, "Spada a una mano", 10, 10);
                 preso = 1;
                 break;
             }
@@ -68,7 +68,7 @@ Giocatore* inizializzaPg(Giocatore* player){
             }
             case 3:{
                 printf("%s", ASCIA);
-                player->inventory.arma = setWeapon(player->inventory.arma, "Ascia", 20, 3);
+                player->inventory.arma = setWeapon(player->inventory.arma, "Ascia", 20, 5);
                 preso = 1;
                 break;
             }
@@ -149,6 +149,8 @@ Giocatore* inizializzaPg(Giocatore* player){
     
     player->inventory.item1 = setItem(player->inventory.item1, "Pozione", "HP", 20, 5);
     player->inventory.item2 = setItem(player->inventory.item2, "Acqua Distillata", "MANA", 20, 5);
+    CONTINUA
+    getchar();
 
     return player;
 }
@@ -159,6 +161,7 @@ Giocatore* inizializzaPg(Giocatore* player){
  * @param char* Il nome del nemico
  * @param int I danni del nemico
  * @param int Gli HP del nemico
+ * @param int La distanza del nemico
  * @return void
  */
 void combat(Giocatore* player, char* enemyName, int enemyDmg, int enemyHp, int enemyDistance){
@@ -174,16 +177,15 @@ void combat(Giocatore* player, char* enemyName, int enemyDmg, int enemyHp, int e
 
     do{
         if(turno){  //TURNO PG
-                printf("\nE\' il tuo turno!\n\nHP: %d | Mana: %d\n", player->hp, player->mana);
+                printf("\nE\' il tuo turno, %s!\n\nHP: %d | Mana: %d\n\n%s - HP: %d\n", player->nome, player->hp, player->mana, enemy.nome, enemy.hp);
                 printf("1. %s\n2. %s\n3. %s\n4. %s\n5. Aspetta (inserisci qualsiasi altro valore)\nCosa scegli? ", player->inventory.arma.nome, player->inventory.incantesimo.nome, player->inventory.item1.nome, player->inventory.item2.nome);
                 scanf("%d", &scelta);
                 fflush(stdin);
 
             switch(scelta){
                 case 1:{ //ATT CORPO A CORPO
-
                     if(player->inventory.arma.distanza >= enemy.distanza){
-                        printf("Attacchi usando %s con successo, infliggi %d danni!", player->inventory.arma.nome, player->inventory.arma.danno);
+                        printf("Attacchi usando %s con successo, infliggi %d danni!\n", player->inventory.arma.nome, player->inventory.arma.danno);
                         enemy.hp = enemy.hp - player->inventory.arma.danno;
                     }else{
                         printf("%s", ATTACCOMANCATO);
@@ -191,8 +193,7 @@ void combat(Giocatore* player, char* enemyName, int enemyDmg, int enemyHp, int e
                     break;
                 }
                 case 2:{ //ATT MAGIA
-
-                    printf("Attacchi usando %s con successo, infliggi %d danni!", player->inventory.incantesimo.nome, player->inventory.incantesimo.danno);
+                    printf("Attacchi usando %s con successo, infliggi %d danni!\n", player->inventory.incantesimo.nome, player->inventory.incantesimo.danno);
                         enemy.hp = enemy.hp - player->inventory.incantesimo.danno;
                         player->mana = player->mana - 10;
                     break;
@@ -200,14 +201,14 @@ void combat(Giocatore* player, char* enemyName, int enemyDmg, int enemyHp, int e
                 case 3:{ //item 1 == HP
                     if(player->inventory.item1.utilizzi > 0){
                         if(player->hp < 100){
-                            printf("Utilizzi la %s, recuperi vita!");
+                            printf("Utilizzi la %s, recuperi vita!\n");
                             player->hp += player->inventory.item1.value;
                             player->inventory.item1.utilizzi = player->inventory.item1.utilizzi - 1;
                             if(player->hp >100){ //se supera il cap dei 100hp
                                 player->hp = 100;
                             }
                         }else{
-                            printf("Sei già a pieni HP!");
+                            printf("Sei già a pieni HP!\n");
                         }
                     }else{
                         printf("%s", ITEMFINITO);
@@ -217,14 +218,14 @@ void combat(Giocatore* player, char* enemyName, int enemyDmg, int enemyHp, int e
                 case 4:{ //item 2 == MANA
                     if(player->inventory.item2.utilizzi > 0){
                         if(player->hp < 100){
-                            printf("Utilizzi la %s, recuperi mana!");
+                            printf("Utilizzi la %s, recuperi mana!\n");
                             player->mana += player->inventory.item2.value;
                             player->inventory.item2.utilizzi = player->inventory.item2.utilizzi - 1;
                             if(player->mana >100){ //se supera il cap dei 100mana
                                 player->mana = 100;
                             }
                         }else{
-                            printf("Il tuo spirito e\' gia\' stabile!");
+                            printf("Il tuo spirito e\' gia\' stabile!\n");
                         }
                     }else{
                         printf("%s", ITEMFINITO);
@@ -237,9 +238,12 @@ void combat(Giocatore* player, char* enemyName, int enemyDmg, int enemyHp, int e
             }
             turno = false;
         }else{ //TURNO NEMICO
-            printf("\nE\' il turno del nemico!\n\n");
+            if(enemy.hp <= 0){ //controllo degli hp, se scendono a 0 torna al main
+                return;
+            }
+            printf("\nE\' il turno di: %s!\n\n", enemy.nome);
             if(player->inventory.armor.armor > enemy.danno){ //se l'armatura è superiore al danno, il PG non subisce danno
-                printf("Il nemico attacca, ma non subisci alcun danno grazie alla tua armatura!");
+                printf("Il nemico attacca, ma non subisci alcun danno grazie alla tua armatura!\n");
             }else if(player->inventory.armor.armor == enemy.danno){ //se il danno è uguale al livello armatura, il player subisce 1 danno
                 player->hp--;
                 printf("Il nemico ti attacca, perdi 1 hp!");
@@ -248,12 +252,9 @@ void combat(Giocatore* player, char* enemyName, int enemyDmg, int enemyHp, int e
                 printf("Il nemico ti attacca, perdi %d hp!", diff);
                 player->hp = player->hp - diff;
             }
-
             turno = true;
         }
-    }while(player->hp <= 0 || enemy.hp <= 0);
-
-
+    }while(player->hp > 0);
 }
 
 
