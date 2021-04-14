@@ -8,6 +8,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <stdbool.h>
 #include "core/misc.c"
 #include "core/PG_stats.c"
 
@@ -30,7 +31,6 @@ int main(){
 
     switch(opz){
         case 1:{
-            
             scelto = 1;
             break;
         }

@@ -28,3 +28,5 @@ File di funzioni e define miscellanee
 #define PALLAFUOCO "Un incantesimo base che permette di lanciare sfere di fuoco contro i nemici, o per accendere dei falo\', non si sa mai."
 #define PISTOLACQUA "Nemmeno il mercante sa come ci e\' finito in questo grimorio, però\' meglio di niente."
 #define FRECCIALUCE "Leggenda narra che se l'utilizzatore e\' un credente religioso, l'incantesimo sia più forte. Sfortunatamente, non hanno ancora capito quale religione sia quella corretta."
+
+
