@@ -30,17 +30,23 @@ int main(){
     fflush(stdin);
 
     switch(opz){
-        case 1:{
+        case 1:{ //combattimento
             scelto = 1;
-            
+            combat(player, "Lupo", 10, 50, 5);
+            if(player->hp <= 0){
+                printf("%s", PLAYERDEFEAT);
+                return 0;
+            }else{
+                printf("%s", ENEMYDEFEAT);
+            }
             break;
         }
-        case 2:{
+        case 2:{ //cibarlo
             printf("Per fortuna avevi della carne da parte, e chissa\' perche\' del sonnifero. Comunque, gliele dai insieme ed il lupo si addormenta, permettendoti di fuggire!");
             scelto = 1;
             break;
         }
-        case 3:{
+        case 3:{ //fuggire (game over)
             printf("Hai provato a scappare, ma il lupo era piu\' veloce di te e ti ha preso. Su col morale, almeno avevi un buon sapore.\n\n%s", PLAYERDEFEAT);
             return 0;
         }

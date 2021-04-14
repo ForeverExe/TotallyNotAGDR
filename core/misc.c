@@ -4,6 +4,7 @@ File di funzioni e define miscellanee
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <stdbool.h>
 
 //-----TESTI PREDEFINITI----//
 #define WELCOME "Benvenuto in Totally Not A GDR! Il gioco e\' abbastanza corto, pero\' spero che sia godibile.\nIniziamo con la creazione del personaggio!"
@@ -13,6 +14,8 @@ File di funzioni e define miscellanee
 #define MERCANTESPELL "Mercante: Per ottimizzare i danni, è meglio se ti scegli un incantesimo da cambiare con l'arma quando il nemico è distante. Usa questo grimorio."
 #define MERCANTEITEMS "Mercante: Ora sei pronto, tieni queste due pozioni, ti aiuteranno durante il viaggio."
 #define ERROREMERCANTE "Mercante: Non credo di aver capito bene... Quindi, cosa scegli? "
+#define ATTACCOMANCATO "Che sfortuna, l\'attacco non e\' passato...\n"
+#define ITEMFINITO "Hai esaurito l\' item, la vedo male...\n"
 
 //----Sconfitta/Vittoria----
 #define PLAYERDEFEAT "Sei stato sconfitto."
@@ -30,4 +33,3 @@ File di funzioni e define miscellanee
 #define FRECCIALUCE "Leggenda narra che se l'utilizzatore e\' un credente religioso, l'incantesimo sia più forte. Sfortunatamente, non hanno ancora capito quale religione sia quella corretta."
 
 
-void combat()
