@@ -21,7 +21,7 @@ int main(){
     printf("%s", WELCOME);
     player = inizializzaPg(player);
 
-    printf("Completato il tuo equipaggiamento, inizi la tua avventura!\n");
+    printf("\nCompletato il tuo equipaggiamento, inizi la tua avventura!\n");
     printf("Durante il viaggio hai visitato molti posti, come villaggi di montagna, foreste, rovine e chi piu\' ne ha e piu\' ne metta! Finche\'...\n");
     printf("E\' comparso un lupo! Probabilmente ti vede come la sua cena. E\' il momento di agire!\n\n");    
     do{
@@ -48,6 +48,7 @@ int main(){
         }
         case 3:{ //fuggire (game over)
             printf("Hai provato a scappare, ma il lupo era piu\' veloce di te e ti ha preso. Su col morale, almeno avevi un buon sapore.\n\n%s", PLAYERDEFEAT);
+            getchar();
             return 0;
         }
         default:{

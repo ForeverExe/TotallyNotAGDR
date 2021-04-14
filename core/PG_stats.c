@@ -113,7 +113,7 @@ Giocatore* inizializzaPg(Giocatore* player){
     preso=0;
     printf("%s", MERCANTESPELL);
     printf("Scegli un incantesimo (puramente estetico, forse, sebbene non ci sia un interfaccia grafica *occhiolino*):\n");
-    printf("1. Palla di Fuoco [10 mana | 10 danno]\n2. Pistolacqua(?) [10 mana | 10 danno]\n2. Freccia di luce [10 mana | 10 danno]\nMercante: Quindi? Cosa scegli? ");
+    printf("1. Palla di Fuoco [10 mana | 10 danno]\n2. Pistolacqua(?) [10 mana | 10 danno]\n3. Freccia di luce [10 mana | 10 danno]\nMercante: Quindi? Cosa scegli? ");
     do{
         scanf("%d", &opz);
         fflush(stdin);
