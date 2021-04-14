@@ -162,6 +162,7 @@ Giocatore* inizializzaPg(Giocatore* player){
 void combat(Giocatore* player, char* enemyName, int enemyDmg, int enemyHp, int enemyDistance){
     bool turno = true; //true == turno player | false == turno nemico
     int scelta; 
+    int diff;//variabile temporanea per i calcoli dei danni
 
     Nemico enemy;
     enemy.hp = enemyHp;
@@ -234,10 +235,16 @@ void combat(Giocatore* player, char* enemyName, int enemyDmg, int enemyHp, int e
             
             turno = false;
         }else{ //TURNO NEMICO
-
-
-
-
+            if(player->inventory.armor.armor > enemy.danno){ //se l'armatura è superiore al danno, il PG non subisce danno
+                printf("Il nemico attacca, ma non subisci alcun danno grazie alla tua armatura!");
+            }else if(player->inventory.armor.armor == enemy.danno){ //se il danno è uguale al livello armatura, il player subisce 1 danno
+                player->hp--;
+                printf("Il nemico ti attacca, perdi 1 hp!");
+            }else if(player->inventory.armor.armor <= enemy.danno){ //se il danno è maggiore al livello armatura, il player subisce la differenza tra il danno e l'armor
+                diff = enemy.danno - player->inventory.armor.armor;
+                printf("Il nemico ti attacca, perdi %d hp!", diff);
+                player->hp = player->hp - diff;
+            }
             turno = true;
         }
     }while(player->hp <= 0 || enemy.hp <= 0);

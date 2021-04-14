@@ -21,18 +21,18 @@ int main(){
     printf("%s", WELCOME);
     player = inizializzaPg(player);
 
-    printf("Completato il tuo equipaggiamento, inizia la tua avventura!");
+    printf("Completato il tuo equipaggiamento, inizi la tua avventura!");
     printf("Durante il viaggio hai visitato molti posti, come villaggi di montagna, foreste, rovine e chi piu\' ne ha e piu\' ne metta! Finche\'...\n");
     printf("E\' comparso un lupo! Probabilmente ti vede come la sua cena. E\' il momento di agire!\n");    
     do{
-    printf("Che vuoi fare?\n 1 - Affrontarlo\n 2 - Dargli qualcosa da mangiare\n 3 - Scappare\n\nScegli un opzione: ");
+    printf("Che vuoi fare?\n 1 - Affrontalo\n 2 - Dagli qualcosa da mangiare\n 3 - Scappa\n\nScegli un opzione: ");
     scanf("%d", &opz);
     fflush(stdin);
 
     switch(opz){
         case 1:{ //combattimento
             scelto = 1;
-            combat(player, "Lupo", 10, 50, 5);
+            combat(player, "Lupo", 20, 50, 5);
             if(player->hp <= 0){
                 printf("%s", PLAYERDEFEAT);
                 return 0;
@@ -42,7 +42,7 @@ int main(){
             break;
         }
         case 2:{ //cibarlo
-            printf("Per fortuna avevi della carne da parte, e chissa\' perche\' del sonnifero. Comunque, gliele dai insieme ed il lupo si addormenta, permettendoti di fuggire!");
+            printf("Per fortuna avevi della carne da parte, e chissa\' perche\' del sonnifero. Comunque, gliele dai insieme ed il lupo si addormenta, permettendoti di fuggire.");
             scelto = 1;
             break;
         }
