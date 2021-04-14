@@ -37,16 +37,18 @@ void combat(Giocatore* player, char* enemyName, int enemyDmg, int enemyHp, int e
 
 //fase di creazione del personaggio
 Giocatore* inizializzaPg(Giocatore* player){
-
-
     int opz;
     int preso=0;
+
+    player->hp = 100;
+    player->mana = 100;
+
     printf("\nInserisci il nome del personaggio: ");
     scanf("%s", player->nome);
     fflush(stdin);
     printf("\n%s", INTRO1);
     printf("%s", MERCANTEARMI);
-    printf("Scegli un\'arma:\n ");
+    printf("Scegli un\'arma:\n");
     printf("1. Spada a una mano [10 Attacco, 10 Distanza]\n2. Arco (con ovviamente delle frecce)[5 attacco, 20 distanza]\n3. Ascia da guerra (almeno secondo il mercante)[20 attacco, 5 distanza]\nMercante: Quindi? Cosa scegli? ");
     do{
         scanf("%d", &opz);

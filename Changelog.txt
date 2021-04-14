@@ -2,3 +2,7 @@
 - Fixato il problema del "redefinition error"
 - Sostituito TESTOINGAME con dialoghi predefiniti
 - Sistemato il ciclo a riga 65, andava in palla usando 3 OR nella condizione
+
+14/04/2021
+- Aggiunto il combat a turni, sfrutta una variabile booleana per decidere chi gioca quindi c'è poco da bucare
+- Vari fix minori ai testi di gioco
