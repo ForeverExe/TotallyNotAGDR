@@ -30,3 +30,4 @@ File di funzioni e define miscellanee
 #define FRECCIALUCE "Leggenda narra che se l'utilizzatore e\' un credente religioso, l'incantesimo sia più forte. Sfortunatamente, non hanno ancora capito quale religione sia quella corretta."
 
 
+void combat()

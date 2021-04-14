@@ -32,6 +32,7 @@ int main(){
     switch(opz){
         case 1:{
             scelto = 1;
+            
             break;
         }
         case 2:{
