@@ -6,3 +6,7 @@
 14/04/2021
 - Aggiunto il combat a turni, sfrutta una variabile booleana per decidere chi gioca quindi c'è poco da bucare
 - Vari fix minori ai testi di gioco
+
+15/04/2021
+- Capito che è impossibile sistemare il problema della struct senza un aiuto 
+- Finita la storia nel modo più becero esistente
