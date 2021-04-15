@@ -9,8 +9,8 @@ File di funzioni e define miscellanee
 //-----TESTI PREDEFINITI----//
 #define SPAZIO printf("#########################################################################################\n");
 #define WELCOME "Benvenuto in Totally Not A GDR!\nIl gioco e\' abbastanza corto, pero\' spero che sia godibile.\nPrima di iniziare un paio di regole:\n1- Il gioco essendo corto va fatto tutto in un fiato, niente di troppo complicato pero\'.\n2- Fai attenzione alle tue scelte, alcune possono darti ricompense o terminare il gioco.\n3- In questo gioco e\' presente la meccanica della \'distanza\': A seconda del valore, il colpo puo\' andare o meno a segno, non include gli incantesimi.\n"
-#define INTRO "Sei un classico avventuriero, con il desiderio di esplorare il mondo e guadagnare ricchezze.\nMa come puoi definirti tale se non hai nemmeno un\' equipaggiamento?\n"
-#define MERCANTEARMI "Mercante: Oh salve! Lei deve essere nuovo da queste parti. Come? Non ha nulla per difendersi? Non si preoccupi, qua puo\' trovare quello che le serve!\n\n"
+#define INTRO "Sei un classico avventuriero, con il desiderio di esplorare il mondo e guadagnare ricchezze.\nMa come puoi definirti tale se non hai nemmeno un\' equipaggiamento?\n\n"
+#define MERCANTEARMI "Mercante: Oh salve! Lei deve essere nuovo da queste parti. Come? Non ha nulla per difendersi? Non si preoccupi, qua puo\' trovare quello che le serve!\n"
 #define MERCANTEARMOR "Mercante: Bene, adesso e\' meglio se ti scegli un\' armatura per difenderti."
 #define MERCANTESPELL "Mercante: Per ottimizzare i danni, e\' meglio se ti scegli un incantesimo da cambiare con l\'arma quando il nemico e\' distante. Usa questo grimorio.\n"
 #define MERCANTEITEMS "Mercante: Ora sei pronto, tieni questi due oggetti, ti aiuteranno durante il viaggio."

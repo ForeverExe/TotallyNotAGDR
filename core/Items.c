@@ -15,7 +15,7 @@ typedef struct arma{
 
 typedef struct armor{
     int armor;                  //resistenza armatura
-    char nome[50];              //nome dell' item
+    char nome[20];              //nome dell' item
 }Armor;
 
 typedef struct spell{

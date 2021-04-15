@@ -9,8 +9,8 @@ Struttura personaggio e funzioni di modifica interna ad essa, come l'inserimento
 
 typedef struct inventario{
     Arma arma;
-    Armor armor;
     Item item1;
+    Armor armor;
     Item item2;
     Spell incantesimo;
 }Inventario;
