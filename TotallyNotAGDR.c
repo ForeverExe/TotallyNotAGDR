@@ -48,6 +48,8 @@ int main(){
         case 2:{ //cibarlo
             printf("Per fortuna avevi della carne da parte, e chissa\' perche\' del sonnifero. Comunque, gliele dai insieme ed il lupo si addormenta, permettendoti di fuggire.\n\n");
             scelto = 1;
+            CONTINUA
+            getchar();
             break;
         }
         case 3:{ //fuggire (game over)
@@ -88,7 +90,7 @@ int main(){
     printf("Il combattimento e\' stato estenuante, ma ne sei uscito vittorioso!\nDecidi di esplorare il resto dello stanzone e le vicinanze...\n");
     CONTINUA
     getchar();
-    printf("Dopo essere uscito dalla rovina, decidi di andare in una città vicina a vendere quello che hai ottenuto.\n\nFatte delle ricerche e cercato dei collezionisti e mercanti, scopri che il valore dei tuoi oggetti sono inestimabili, facendoti guadagnare così tanto da poter vivere come benestante per il resto della tua vita. \nE giustamente, fai così.\n\nGrazie per aver giocato Totally Not A GDR!");
+    printf("Dopo essere uscito dalla rovina, decidi di andare in una città vicina a vendere quello che hai ottenuto.\n\nFatte delle ricerche e cercato dei collezionisti e mercanti, scopri che il valore dei tuoi oggetti sono inestimabili, facendoti guadagnare cosi\' tanto da poter vivere come benestante per il resto della tua vita. \nE giustamente, fai cosi\'.\n\nGrazie per aver giocato Totally Not A GDR!\n\n");
     CONTINUA
     getchar();
     return 0;
