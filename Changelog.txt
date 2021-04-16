@@ -8,5 +8,5 @@
 - Vari fix minori ai testi di gioco
 
 15/04/2021
-- Capito che è impossibile sistemare il problema della struct senza un aiuto 
+- Capito che è impossibile sistemare il problema della struct senza un aiuto ed in tempi brevi
 - Finita la storia nel modo più becero esistente

@@ -64,11 +64,15 @@ int main(){
 
     printf("Il viaggio continua, nel mentre ti stai procacciando del cibo essendo stato cosi\' furbo da non portarti dietro alcun soldo.\nComunque non sta andando male, hai anche trovato una rovina interessante: non e\' come quelle che hai visto in precedenza e quindi decidi di entrare.");
     printf("L\'entrata sembra decisamente antica e pericolante, per fortuna solo d\'aspetto.\n");
-    CONTINUA
-    getchar();
-    printf("\n\nDopo un po\' di esplorazione, ti imbatti in una stanza con un altare e dei simboli sconosciuti, probabilmente di una civilta\' oppure un culto antico.\nQuello che sai, e\' che ci guadagnerai un bel gruzzoletto.");
-    printf("Ed un\'altra cosa che sai, e\' che non te ne andrai senza combettere, via al combattimento!\n");
+    printf("\n\nDopo un po\' di esplorazione, ti imbatti in una stanza con un altare e dei simboli sconosciuti, probabilmente di una civilta\' oppure un culto antico.\nQuello che sai, e\' che ci guadagnerai un bel gruzzoletto.\nIntanto ti avvicini ad osservare l\'altare presente nella stanza principale.\n");
     //combattimento 2
+    if(strcmp(player->inventory.incantesimo.nome, "Freccia di Luce") == 0){
+        printf("Guardando l'altare, senti una voce che ti chiama, come se fosse una divinità...\nEssere superiore: Oh giovane essere comune, fai attenzione a colui che mi ha imprigionato in questo posto. Accetta questo dono, in modo che tu possa combatterlo.\n\nLa tua Lancia di Luce riceve un potenziamento, sale a 40 danni!");
+        player->inventory.incantesimo.danno = 40;
+    }else{
+        printf("Guardando l'altare, non senti nulla di strano... magari ti serve un incantesimo oppure un oggetto magico in particolare.\n\n");
+    }
+    printf("Dopo esserti allontanato dall\'altare, percepisci una presenza minacciosa. Non ti resta scelta che combattere.");
     player->hp = 100;
     player->mana = 100;
     combat(player, "Entita sconosciuta", 45, 100, 10);
@@ -79,20 +83,12 @@ int main(){
         }else{
             printf("%s", ENEMYDEFEAT);
             getchar();
-            return 0;
         }
     //fine combattimento 2
-    printf("Il combattimento e\' stato estenuante, ma ne sei uscito vittorioso!\nDecidi di esplorare lo stanzone e...\n");
+    printf("Il combattimento e\' stato estenuante, ma ne sei uscito vittorioso!\nDecidi di esplorare il resto dello stanzone e le vicinanze...\n");
     CONTINUA
     getchar();
-    if(strcmp(player->inventory.incantesimo.nome, "Freccia di Luce") == 0){
-        printf("Guardando l'altare, senti una voce che ti chiama, come se fosse una divinità...\nEssere superiore: Oh giovane essere comune, ti ringrazio per avermi liberato da quell\'oppressiva entita\'. Per ringraziarti, accetta questo dono.\n\nLa tua Lancia di Luce riceve un potenziamento, sale a 40 danni!");
-    }else{
-        printf("Guardando l'altare, non senti nulla di strano... magari ti serve un incantesimo oppure un oggetto magico in particolare.\n\n");
-    }
-    CONTINUA
-    getchar();
-    printf("Dopo essere uscito dalla rovina, decidi di andare in una città vicina a vendere quello che hai ottenuto.\n\nFatte delle ricerche e cercato dei collezionisti e mercanti, scopri che il valore dei tuoi oggetti sono inestimabili, facendoti guadagnare così tanto da poter vivere come benestante per il resto della tua vita. \nE giustamente, fai così.\n\nGrazie per aver giocato Totally Not A GDR");
+    printf("Dopo essere uscito dalla rovina, decidi di andare in una città vicina a vendere quello che hai ottenuto.\n\nFatte delle ricerche e cercato dei collezionisti e mercanti, scopri che il valore dei tuoi oggetti sono inestimabili, facendoti guadagnare così tanto da poter vivere come benestante per il resto della tua vita. \nE giustamente, fai così.\n\nGrazie per aver giocato Totally Not A GDR!");
     CONTINUA
     getchar();
     return 0;
