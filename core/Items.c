@@ -34,14 +34,13 @@ typedef struct item{
 Arma setWeapon(Arma arma, char* nome, int danno, int distanza);
 Armor setArmor(Armor armor, char* nome, int armatura);
 Spell setSpell(Spell incantesimo, char* nome, int danno, int mana);
-Item setItem(Item oggetto, char* nome,char* tag, int value, int utilizzi);
+Item setItem(Item oggetto, char* nome, int value, int utilizzi);
 
 /**
  * @brief Imposta/aggiorna l'arma
  * 
  * @param Arma struttura arma 
  * @param char nome dell'arma
- * @param char descrizione dell'arma
  * @param int danno dell'arma
  * @param distanza raggio d'azione dell'arma
  * @return Arma 
@@ -91,9 +90,8 @@ Spell setSpell(Spell incantesimo, char* nome, int danno, int mana){
  * @param int utilizzi 
  * @return Item 
  */
-Item setItem(Item oggetto, char* nome,char* tag, int value, int utilizzi){
+Item setItem(Item oggetto, char* nome, int value, int utilizzi){
     strcpy(oggetto.nome, nome);
-    strcpy(oggetto.tag, tag);
     oggetto.value = value;
     return oggetto;
 }

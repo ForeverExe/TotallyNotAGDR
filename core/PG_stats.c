@@ -147,8 +147,8 @@ Giocatore* inizializzaPg(Giocatore* player){
 
     printf("%s\nHai ottenuto:\n- 1x Pozione (HP, 5 usi)\n- 1x Acqua distillata (Mana, 5 usi)\n", MERCANTEITEMS);
     
-    player->inventory.item1 = setItem(player->inventory.item1, "Pozione", "HP", 20, 5);
-    player->inventory.item2 = setItem(player->inventory.item2, "Acqua Distillata", "MANA", 20, 5);
+    player->inventory.item1 = setItem(player->inventory.item1, "Pozione", 20, 5);
+    player->inventory.item2 = setItem(player->inventory.item2, "Acqua Distillata", 20, 5);
     CONTINUA
     getchar();
 
