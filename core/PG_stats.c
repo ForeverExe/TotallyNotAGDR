@@ -239,7 +239,7 @@ void combat(Giocatore* player, char* enemyName, int enemyDmg, int enemyHp, int e
             turno = false;
         }else{ //TURNO NEMICO
             if(enemy.hp <= 0){ //controllo degli hp, se scendono a 0 torna al main
-                return;
+                return; //vittoria player
             }
             printf("\nE\' il turno di: %s!\n\n", enemy.nome);
             if(player->inventory.armor.armor > enemy.danno){ //se l'armatura è superiore al danno, il PG non subisce danno
