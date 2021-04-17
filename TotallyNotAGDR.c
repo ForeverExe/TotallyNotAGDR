@@ -3,6 +3,8 @@
                     Progetto scolastico in C
                   Matteo Besutti, 4Informatico
 
+A quello che si becca il mio progetto, nella cartella ci sta il TXT "changelog", scrivi lì su quello che ci metti che come minimo ci danno punti in più ;)
+
 */
 
 #include <stdio.h>
