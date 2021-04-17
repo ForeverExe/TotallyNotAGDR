@@ -19,16 +19,15 @@ typedef struct armor{
 }Armor;
 
 typedef struct spell{
-    int danno;
-    int mana_richiesto;
+    int danno;                  //danno dell' incantesimo
+    int mana_richiesto;         //mana richiesto per lanciare l'incantesimo
     char nome[50];              //nome dell' item
 }Spell;
 
 typedef struct item{    
-    int value;
-    int utilizzi;
-    char tag[5];
-    char nome[50];
+    int value;                  //valore numerico dell' item (Quanto cura o quanto mana dà)
+    int utilizzi;               //quante volte l'item è utilizzabile
+    char nome[50];              //nome dell'item
 }Item;
 
 Arma setWeapon(Arma arma, char* nome, int danno, int distanza);

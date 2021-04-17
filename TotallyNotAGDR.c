@@ -45,7 +45,7 @@ int main(){
             }
             break;
         }
-        case 2:{ //cibarlo
+        case 2:{ //gli dai da mangiare
             printf("Per fortuna avevi della carne da parte, e chissa\' perche\' del sonnifero. Comunque, gliele dai insieme ed il lupo si addormenta, permettendoti di fuggire.\n\n");
             scelto = 1;
             CONTINUA
