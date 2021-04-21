@@ -13,19 +13,72 @@ A quello che si becca il mio progetto, nella cartella ci sta il TXT "changelog",
 #include <stdbool.h>
 #include "core/misc.c"
 #include "core/PG_stats.c"
+#include "core/file.c"
 
 
 
 int main(){
     int opz;
     int scelto=0;
+    int sceltaMenuPrincipale;
+    char *personaggioFileName = "core/personaggi/personaggio.bin";
     Giocatore* player = (Giocatore*)malloc(sizeof(Giocatore));
-    SPAZIO
-    printf("%s", WELCOME);
-    SPAZIO
-    printf("Iniziamo con la creazione del personaggio!");
-    player = inizializzaPg(player);
-    printf("\nCompletato il tuo equipaggiamento, inizi la tua avventura!\n\n");
+
+    configureAndTestFile(personaggioFileName); // controlla che esista il file e nel caso non esista lo crea
+
+    printf("Benvenuto in Totally Not A GDR!\n\nMenu\' pricipale.\n");
+    do{
+        printf("Che vuoi fare?\n 1 - Nuova partita\n 2 - Carica personaggio\n 3 - Istruzioni di gioco\n 4 - Uscita\n\nScegli un opzione: ");
+        scanf("%d", &sceltaMenuPrincipale);
+        fflush(stdin);
+        switch (sceltaMenuPrincipale)
+        {
+            case 1 : {  // menu principale --> mostro l'introduzione e l'inizializzazione
+                SPAZIO
+                printf("%s", WELCOME);
+                SPAZIO
+                printf("Iniziamo con la creazione del personaggio!");
+                player = inizializzaPg(player);
+                uploadPersonaggio(personaggioFileName, *player);
+                
+                printf("\nCompletato il tuo equipaggiamento, inizi la tua avventura!\n\n");
+
+                break;
+            }
+
+            case 2 : {  // carica personaggio   [prendere in considerazione il caso in cui non ci sia un personaggio salvato]
+                Giocatore* playerTemp = (Giocatore*)malloc(sizeof(Giocatore));
+                if((playerTemp = downloadPersonaggio(personaggioFileName)) == NULL ){       // perchè se metto player = download... e risulta NULL si blocca
+                    printf("Ops, non c\'e\' nessun personaggio salvato... Per giocare iniziare una nuova partita!\n\n");
+                    sceltaMenuPrincipale = 0;   // chiede di nuovo la scelta
+                }
+                else{
+                    player = playerTemp;
+                    free(playerTemp);
+                }
+
+                printf("Benvenuto %s, ora inizia la tua avventura!\n\n", player->nome); // scrive il nome sbagliato
+                break;
+            }
+
+            case 3 : {  // mostro le istruzioni !!![capire se devo farle o sono già fatte]
+
+
+                break;
+            }
+
+            case 4 : {
+                printf("\nMi dispiace tu te ne vada... Ti aspetto per un'altra avventura!");
+                return 0;
+            }
+
+            default : {
+                printf("Non sottrarti al tuo destino! Scegli una delle opzioni...\n");
+                break;
+            }
+        }
+    } while (sceltaMenuPrincipale < 1 || sceltaMenuPrincipale > 4);
+
     printf("Durante il viaggio hai visitato molti posti, come villaggi di montagna, foreste, rovine e chi piu\' ne ha e piu\' ne metta! Finche\'...\n");
     printf("E\' comparso un lupo! Probabilmente ti vede come la sua cena. E\' il momento di agire!\n\n");    
     do{
