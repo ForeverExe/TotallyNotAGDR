@@ -78,6 +78,8 @@ Spell setSpell(Spell incantesimo, char* nome, int danno, int mana){
     strcpy(incantesimo.nome, nome);
     incantesimo.danno = danno;
     incantesimo.mana_richiesto = mana;
+
+    return incantesimo;
 }
 
 /**

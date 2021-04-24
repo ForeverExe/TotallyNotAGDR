@@ -2,8 +2,8 @@ Menù principale: un menu all'interno del main (TotallyNotAGDR.c) con relative f
 con la possibilità di scegliere diverse opzioni: 
 - Nuova partita (crea il personaggio da 0, passando per tutto il programma come già fa ora); [fatto]
 - Carica personaggio (carica un personaggio preesistente salvato su un file, saltando l' introduzione,
-  il salvataggio della struttura del personaggio va implementato alla fine della funzione "inizializzaPersonaggio" chiamando il file "personaggio.bin"); 
+  il salvataggio della struttura del personaggio va implementato alla fine della funzione "inizializzaPersonaggio" chiamando il file "personaggio.bin"); [FATTO]
 - Istruzioni (stampa a video le istruzioni del gioco, come funziona e le meccaniche principali); 
-- Uscita; 
+- Uscita;
 - Facoltativo: è presente un bug dove nella fase di combattimento lo spazio dedicato agli incantesimi viene bucato ed occupato dall'armatura, 
-  riguardo a come sono fatti si può guardare nella repo. 
+  riguardo a come sono fatti si può guardare nella repo.

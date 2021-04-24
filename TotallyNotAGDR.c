@@ -41,8 +41,8 @@ int main(){
                 player = inizializzaPg(player);
                 uploadPersonaggio(personaggioFileName, *player);
                 
-                printf("\nCompletato il tuo equipaggiamento, inizi la tua avventura!\n\n");
-
+                printf("\nCompletato il tuo equipaggiamento, inizia la tua avventura!\n\n");
+                
                 break;
             }
 
@@ -53,7 +53,8 @@ int main(){
                     sceltaMenuPrincipale = 0;   // chiede di nuovo la scelta
                 }
                 else{
-                    player = playerTemp;
+                    *player = *playerTemp;
+                    // printPersonaggio(*player);
                     free(playerTemp);
                 }
 
@@ -62,7 +63,7 @@ int main(){
             }
 
             case 3 : {  // mostro le istruzioni !!![capire se devo farle o sono già fatte]
-
+                printf("Prima di iniziare un paio di regole:\n1- Il gioco essendo corto va fatto tutto in un fiato, niente di troppo complicato pero\'.\n2- Fai attenzione alle tue scelte, alcune possono darti ricompense o terminare il gioco.\n3- In questo gioco e\' presente la meccanica della \'distanza\': A seconda del valore, il colpo puo\' andare o meno a segno, non include gli incantesimi.\n");
 
                 break;
             }
