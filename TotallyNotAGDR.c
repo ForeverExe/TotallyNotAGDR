@@ -63,8 +63,8 @@ int main(){
             }
 
             case 3 : {  // mostro le istruzioni !!![capire se devo farle o sono già fatte]
-                printf("Prima di iniziare un paio di regole:\n1- Il gioco essendo corto va fatto tutto in un fiato, niente di troppo complicato pero\'.\n2- Fai attenzione alle tue scelte, alcune possono darti ricompense o terminare il gioco.\n3- In questo gioco e\' presente la meccanica della \'distanza\': A seconda del valore, il colpo puo\' andare o meno a segno, non include gli incantesimi.\n");
-
+                printf("\nISTRUZIONI DI GIOCO:\n\nPrima di iniziare un paio di regole:\n1- Il gioco essendo corto va fatto tutto in un fiato, niente di troppo complicato pero\'.\n2- Fai attenzione alle tue scelte, alcune possono darti ricompense o terminare il gioco.\n3- In questo gioco e\' presente la meccanica della \'distanza\': A seconda del valore, il colpo puo\' andare o meno a segno, non include gli incantesimi.\n\n\n");
+                sceltaMenuPrincipale = 0;
                 break;
             }
 

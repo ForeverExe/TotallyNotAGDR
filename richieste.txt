@@ -6,4 +6,4 @@ con la possibilità di scegliere diverse opzioni:
 - Istruzioni (stampa a video le istruzioni del gioco, come funziona e le meccaniche principali); 
 - Uscita;
 - Facoltativo: è presente un bug dove nella fase di combattimento lo spazio dedicato agli incantesimi viene bucato ed occupato dall'armatura, 
-  riguardo a come sono fatti si può guardare nella repo.
+  riguardo a come sono fatti si può guardare nella repo. [FATTO]
