@@ -1,7 +1,3 @@
-void printPersonaggio(Giocatore p){
-    printf(":::::::::::::::::%s, %d, %d, %s::::::::::::::::\n", p.nome, p.mana, p.hp, p.inventory.arma.nome);
-}
-
 void configureAndTestFile(char* fileName){
     FILE *fpin;
     fpin = fopen(fileName, "rb");
